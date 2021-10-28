@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border : 1px dotted black;
+            border-collapse: collapse;
+        }
+        td {
+            border : 1px dotted black;
+        }
+        th {
+            border : 1px dotted black;
+        }
+    </style>
+    <title>table</title>
+</head>
+<body>
+    <h1>표(table) 형식으로 정보 출력하기</h1>
+    <!--
+        summary의 기능 : 데이터에 영향을 주지 않으나, 
+        표의 내용에 대한 열쇠말이나 요약을 함으로써,
+        내용 파악과 유지보수를 쉽게 하도록 하는 기능을 한다.
+        이는 실제 표의 경우 데이터가 많아서 읽는데 시간이 많이 걸리는 경우가
+        종종 발생하기 때문에 이 경우에 테이블을 읽고 수정을 할 지 
+        결정하는데 도움을 준다.
+    -->
+    <table summary="사회생활을 하면서 가장 친한 친구목록">
+        <caption>친구 목록</caption>
+        <colgroup>
+            <col width="200px"/>
+            <col width="500px"/>
+            <col width="300px"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <!--
+                    th : 중앙정렬, 굵은 글씨
+                -->
+                <th>번호</th>
+                <th>이름</th>
+                <th>국적</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>스티브</td>
+                <td rowspan="2">미국</td>
+                <!--
+                    rowspan 의 기능 
+                    rowspan = "3" 인 경우, 자신을 포함해 row의 영역을
+                    3개분을 만들고 경계를 없애는 식으로 확장한다.
+                    그런 문제 때문에 rowspan을 할 경우에는 밑의 <td>태그
+                    내용을 제거해야 표가 깔끔해지며, 그렇지 않을 경우
+                    컴퓨터는 억지로 새로 행을 만들어버린다.
+                -->
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>빌게이츠</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>손정의</td>
+                <td>일본</td>
+            </tr>
+            <tr>
+                <td colspan="2">4. 일론머스크</td>
+                <td><del>경기도 화성</del> &nbsp;남아프리카, 캐나다, 미국</td>
+                <!--
+                    colspan 기능
+                    colspan 역시 행의 방향으로 새로 칸을 만든 다음 경계를 없애는
+                    식으로 확장을 한다. 따라서 colspan을 하는 과정에서 경계 처리를
+                    하지 않을 경우 꽤 곤란한 상황이 나올 수 있다.
+                -->
+            </tr>
+        </tbody>
+    </table>
+    <!--
+        과거에는 table태그를 이용해 칸을 나누어 디자인을 했고, 실제로 그런
+        기능이 있으나, 본래 table 은 데이터를 담기 위한 기능이며, 디자인의 
+        기능이 CSS로 온 이상, table을 이용해 디자인을 하는 것은 지양해야한다.
+        또 table을 이용해 칸을 나누어 header와 footer을 만들었으나,
+        HTML5에 오면서 semantic web 의 태그가 생겼으므로 굳이 쓰지 않는다.
+    -->
+</body>
+</html>

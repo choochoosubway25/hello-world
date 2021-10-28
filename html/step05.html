@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper link</title>
+</head>
+<body>
+    <h1>a 요소는 하이퍼링크, 책갈피, 메일, 자바스트립트를 수행할 수 있다.</h1>
+    <h2>상대경로</h2>
+    <!--
+        ../ -> 상위디렉토리
+        ./ -> 현재디렉토리
+        X -> 현재디렉토리 (내용 없을 시)
+    -->
+    <a href="../index.html">메인</a>
+    <a href="step01.html">step01.html</a>
+    <a href="./step02.html">step02.html</a>
+    <a href="aa/test.html">test.html</a>
+
+    <!-- 나의 디렉토리가 아닌 것들은 모두 절대 경로이다.-->
+    <h2>다른 웹의 절대경로 이동</h2>
+    <a href="https://www.naver.com/" target="_blank">네이버</a>
+    <a href="https://www.daum.net/" target="_self">다음</a>
+
+    <h2>같은 웹의 절대경로 이동</h2>
+    <!--
+        / -> 최상의 디렉토리(루트 디렉토리)
+    -->
+    <a href="/index.html">메인1</a>
+    <a href="http://localhost/index.html">메인2</a>
+    <!--
+        메인 1 방식의 장점: 유지보수가 쉽다.(전체 회사 도메인이 바뀌어도 작동)
+        메인 2 방식의 장점: 회사에 있는 컨텐츠까지 인식해서 퍼갈수 있음(?)
+        실제로는 메인 2 방식이 더 효율적이고 권장하는 방법.
+    -->
+
+    <h2>메일 보내기</h2>
+        <a href="mailto:choochoosubway25@gmail.com">메일보내기</a>
+
+    <h2>전화 걸기</h2>
+    <a href="tel:00000000000">전화걸기</a>
+
+    <h2>자바스크립트 호출</h2>
+    <a href="javascript:alert('안녕하세요');">자바스크립트 호출</a>
+    <h2>책갈피(fragment identifier)</h2>
+    <!--
+        href 사용시 # 을 주어줄 경우, #(id명) 의 형태로 입력을 하며,
+        이는 <p id=(id명)> 을 통해 사전에 선언을 해주어야 하며, href의
+        href #(id명) 은 # 뒤에 (id명)을 찾아 그곳이 있을 경우 그곳으로
+        이동하게 되는 것이다.
+    -->
+    <a href="#bottom">특정영역으로 이동</a>
+    <div style="height:5000px;background-color: blue;"></div>
+    <p id="bottom">bottom</p>
+</body>
+</html>

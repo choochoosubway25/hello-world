@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /*
+        falsy value:  자바스크립트에선, false 외에 false 값으로 취급하는
+        것이 여러 값이 있다.
+        총 5가지, false까지 포함하면 6개가 되는데
+        1. 0 ,2. ""(빈 문자열) 3. undefined 4. null 5. NaN
+        은 if문에서 혹은 불리언 문맥에서 false로 간주하는 말.
+        */
+       let isRun = false;
+       let isWait = false;
+       let isSmaller = 10 == 5;
+       let isEquals = 10 == 100;
+       let isDifference = 10 != 100;
+
+       if(isRun){
+           console.log('달리고 있어요');
+       }else{
+           console.log('달리지 않고 있어요.')
+       }
+       //falcy value : 0 , '' , undefined, null, NaN
+       let a = 0;
+       let b = ''; // 비어있지 않은 문자열은 true 취급
+       let c; // 0 이 아닌 변수값이 할당 된 경우는 true 취급
+       let d = null;
+       let e = parseInt('abc'); //NaN
+       if(b){
+           console.log('true');
+       }else{
+           console.log('false');
+       }
+
+    </script>
+    <title>Boolean</title>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /*
+        자바스크립트의 함수의 경우, 인자의 수가 설정보다 많이 들어 갈 경우,
+        기존 설계의 인자만 영향을 주고 작동이 된다.
+        단, 입력된 인자의 수 자체가 함수 내부에 값에 저장은 된다.
+        다른 언어의 경우 인자의 수가 맞지 않을 경우, 사전설정이 없는
+        한 오류가 나지만, 자바스크립트는 유연하게 반응한다.
+        */
+
+        //선언적 함수 -> function hoisting 발생
+        test1();
+        function test1(){
+            console.log('test1 function');
+        }
+
+        // Uncaught ReferenceError: Cannot access 'test2' before initialization
+        // test2();
+        //함수식 -> function hoisting 발생 x
+        const test2 = function(){
+            //이름이 없는 함수를 무명함수라 함
+            console.log('test2 function');
+        }
+        test2();
+        
+        //test2의 참조값을 test3로 할당
+        const test3 = test2;
+        test3();
+
+        console.log(typeof test1);
+        console.log(typeof test2);
+        console.log(typeof test3);
+
+        const plus = function(first, second){
+            return first + second;
+        }
+
+        let sum = plus(10,20);
+        console.log(plus(10,20)) //30
+        console.log(plus(10,20,30)) // 다른 언어에서는 오류가 나지만,
+                                    // 자바스크립트에서는 실행이 된다.
+        console.log(plus(10)) // NaN. 이는 첫번째는 정의되어있지만,
+                              // 그 다음은 정의되지 않아 숫자+undefined
+                              // 의 결과가 나오게 되었기에 NaN이 나왔다.
+        
+        const getSum = function(){
+            //console.log(arguments.length);
+            let sum = 0;
+            for(let value of arguments){
+                sum = sum + value;
+            }
+            return sum;
+        }
+
+        let result0 = getSum(10,20);
+        let result1 = getSum(10,20,30);
+        let result2 = getSum(10,20,30,40);
+
+        console.log(result0);
+        console.log(result1);
+        console.log(result2);
+    </script>
+    <title>함수</title>
+</head>
+<body>
+    
+</body>
+</html>

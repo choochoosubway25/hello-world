@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        li {
+            background-color: yellow /* 1점 */;
+        }
+        ul li {
+            background-color: green; /* 2점 */
+        }
+        .active {
+            background-color: pink; /* 10점 */
+        }
+        #first {
+            background-color: blue; /* 100점 */
+        }
+        #first {
+            background-color: brown !important /* 10000점 */;
+            /* 
+            이렇게 하면 개발자들이 inline CSS 사용하려고 해도 
+            CSS 변경이 안된다. 다만 요즘은 CSS 퍼블리셔와 
+            개발자들이 서로 소통과 신뢰를 형성하는 추세라
+            잘 쓰지 않음.
+            */
+        }
+    </style>
+    <title>css 선택자 우선순위</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <ul>
+                <!-- 태그 내부에서 style을 지정할 경우(inline css), css의 가중치 점수는 1000점-->
+                <li class="active" id="first" style="background-color: coral;">하나</li>               
+                <!-- 
+                    inline CSS !important 의 가중치 : 11000점 
+                    다만 이러면 CSS 퍼블리셔와 개발자가 서로 싸우자는 거에 가까우니
+                    왠만하면 하지 않는 것이 중요함.
+                -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

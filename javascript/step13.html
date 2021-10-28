@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h1> 장바구니<span id="cartCount">0</span></h1>
+    <!-- inline event -->
+    <button onclick="javascript:send();">전송1</button>
+
+    <!-- listener event -->
+    <button id="sendBtn">장바구니</button>
+</body>
+<script>
+    // Inline event 방식
+    let cartCount = 0;
+    function send(){
+        alert('전송');
+    }
+    // Event listnerer 방식 (Click Event)
+    // 비록 더 복잡하지만,
+    // 이렇게 하면 CSS와의 연계가 강해지므로 더 좋은 방법이라고 할 수 있다.
+    /* const btn = document.querySelector("#sendBtn");
+    btn.addEventListener("click",function(){
+        alert("전송2")
+    }); */ //(이벤트 방식,이벤트를 했을때 쓰일 함수)
+    const btn = document.querySelector("#sendBtn");
+    btn.addEventListener("click",function(){
+        cartCount++;
+        const spanObj = document.querySelector("#cartCount")
+        spanObj.innerHTML = cartCount;
+    });
+</script>
+</html>

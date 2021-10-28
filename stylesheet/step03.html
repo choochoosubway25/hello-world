@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*
+        .container {
+            background-color: tomato;
+        }
+        */
+        /* .container의 자손 중에서 p요소 선택*/
+        /* .container p {
+            background-color: wheat;
+        } */
+        /* .container의 자식 중에서 p요소 선택*/
+        /* .container > p{
+            background-color: violet;
+        } */
+
+        /*.container의 형제중에 바로 인접한 p요소만 선택*/
+        /* .container + p {
+            background-color: wheat;
+        } */
+
+        /* .container의 형제 중 p요소만 선택 */
+        /* .container ~ p {
+            background-color: wheat;
+        }*/
+
+        /* .container > div {
+            background-color : wheat
+        } */
+
+        /* .container div p{
+            background-color: wheat;
+        } */
+
+        /* #myP {
+            background-color: wheat;
+        } */
+
+        /* .container .classP {
+            background-color: wheat;
+        } */
+    </style> 
+    <link rel="stylesheet" href="../css/style2.css">
+    <title>CSS Selector 2</title>
+</head>
+<body>
+    <!-- CSS에서 형제는 기준점 밑에만 해당된다. -->
+    <p>Maecenas pellentesque vestibulum nibh</p> <!--container 형제 아님-->
+    <div class="container">
+        <p> 'container' Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div>
+            <p class="classP" id="myP">Sed id dolor sit amet est euismod vulputate.</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+    <p>Donec finibus tincidunt pharetra.</p> <!-- container 인접 형제-->
+    <p>Vestibulum hendrerit quis eros non vulputate.</p> <!-- container 형제이나 인접형제 X-->
+    <p>Vestibulum lacus lacus, euismod nec enim in, pretium tincidunt arcu.</p> <!-- container 형제이나 인접형제 X-->
+    <p>Sed risus justo, lobortis a lorem vitae, pellentesque faucibus ipsum.</p> <!-- container 형제이나 인접형제 X-->
+</body>
+</html>

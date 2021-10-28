@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .first{
+            /* 
+            font-style : 글자 스타일, 일반과 기울어지는 형태 등이 있다.
+            다만, 강조를 위해 기울임체를 쓰는거라면 html 설계 단계에서
+            em 태그를 사용하는 것이 좋다.
+            font-family : 글자 글꼴 설정
+            여러가지 글꼴을 지정할 수 있는데, 이는 가장 앞에 있는 글꼴을
+            우선 지원하되, 브라우저나 컴퓨터가 지원하지 않으면 그 다음
+            글꼴을 적용하는 과정을 계속한다. 
+            font-weight : 글자 굵기 설정 
+            font-size : 글자 크기 설정. 상황에 따라 다르지만, 기본설정값은
+            보통 16px에 해당한다.
+            text-decoration : 글자 꾸밈 설정 
+            none-> 없음 / underline -> 밑줄긋기 / overline -> 윗줄긋기
+            line-through -> 중간줄긋기 또는 취소선
+            color : text로 입력한 경우 글짜 색깔
+            font-transform : 글자 변화(한글에는 의미 없음)
+            none/uppercase/lowercase/capitalize
+            letter-spacing : 자간 (글자 간격 설정), 참고로 음수값도 가능
+            -> 간격을 좁힐 수 있음.
+            line-height : 행간 (문장, 단락끼리의 간격)
+            text-indent : 첫번째 단어 들여쓰기 할 간격 설정.
+            text-align : 글짜정렬 
+            left/center/right/justify ->
+            왼쪽 정렬/가운데 정렬/오른쪽 정렬/띄어쓰기 조정하여 화면에 꽉차게 조정하는 정렬
+            justify -> LaTeX 생각하면 쉬움.
+            */
+            font-style: normal;
+            font-family:AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
+            font-weight: bold;
+            font-size: 13px;
+            text-decoration: none;
+            color : blue;
+            letter-spacing: 5px;
+        }
+        .second{
+            text-transform: capitalize;
+            letter-spacing: -1px;
+            line-height: 16px;
+            text-indent: 5px;
+        }
+        .third{
+            text-align: center;
+        }
+    </style>
+    <title>text</title>
+</head>
+<body>
+    <p class="first">
+        요양원은 요한 양치기 소년 원두커피 3세의 약자로,
+         취사장이라 불리는 취리히 사모예드 장터국밥과 함께
+         시장님에게 찾아가 시.장님 시장.님.
+    </p>
+    <p class="second">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas erat velit, at lacinia odio lacinia viverra. Ut lobortis auctor justo non consequat. Fusce non aliquet erat. Donec venenatis erat in tortor tincidunt, ac interdum libero vehicula. Quisque tristique scelerisque arcu in luctus. Phasellus faucibus neque nec urna accumsan malesuada. Sed arcu mauris, auctor non felis at, condimentum pellentesque eros. Quisque vitae lorem suscipit, scelerisque nulla in, elementum dui.</p>
+    <p class="third">Lorem ipsum dolor sit amet</p>
+</body>
+</html>

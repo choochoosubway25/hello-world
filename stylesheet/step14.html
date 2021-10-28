@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*
+        display 요소 정리하기
+        1. none : 요소가 출력되지 않게 됨. (내용표시 & 공간차지 X)
+        참고) 요소가 공간은 차지하되 내용이 출력되지 않게 하려면 visibility:hidden 을 해야함 
+        2. block : 가로 길이가 기본적으로 100%임. 
+        block요소를 연속으로 사용하면 요소하나하나 줄이 바뀌어서 출력됨.
+        width, height, margin, padding 속성 모두 지정 가능.
+        주로 레이아웃 배치시 사용
+        ex) <div>, <p>
+        3. inline : block과 달리 줄 바뀜 X, 단어처럼 행동함. 
+        단, width, height 속성 지정 X.
+        margin의 경우 left, right 설정 가능하나, top, bottom 설정 불가능.
+        설정해도 외형은 바뀌지만 기능 작동 X
+        */
+        .first {
+            display: none;
+        }
+        .second {
+            display: block;
+            border : 1px solid black;
+            width : 500px;
+            height : 300px;
+            margin : 100px;
+            padding : 100px;
+        }
+        /* a {
+            display : inline;
+            border: 1px solid black;
+            width : 100px;
+            height : 100px;
+            margin: 10px;
+            padding : 10px;
+             
+            inline 의 설정을 가진 요소는 left, right 마진은 가능하지만,
+            top, bottom 마진은 설정이 적용되지 않는다. 설정은 되지만 
+            마진으로써의 역할은 하지 못한다.
+            원래는 상하는 마진이 설정이 적용되지 않아야 하는데 설정이 됨
+            -> 추후 조사 예정
+            -> 실제로 설정이 되는 것 처럼 보이지만 형태만 변하고 실제로는
+             기능이 작동되지 않음.
+            
+        } */
+        /* a {
+            display : inline
+        } */
+        .btn-large{
+            display: inline-block;
+            /* a 는 inline 이므로 width 가 부여되지 않는다. 
+            그러나 display 의 inline-block 을 이용하면 width를 
+            부여 할 수 있다.*/ 
+            width : 80px;
+            line-height : 40px;
+            text-align : center;
+            background-color: #0d6efd;
+            color : #ffffff;
+            text-decoration : none;
+            border-radius: 5px;
+        }
+        .btn-small{
+            display: inline-block;
+            /* a 는 inline 이므로 width 가 부여되지 않는다. 
+            그러나 display 의 inline-block 을 이용하면 width를 
+            부여 할 수 있다.*/ 
+            width : 80px;
+            line-height : 30px;
+            text-align : center;
+            background-color: #0d6efd;
+            color : #ffffff;
+            text-decoration : none;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Display</title>
+</head>
+<body>
+    <div>Lorem ipsum dolor sit amet, </div>
+    <div class="first">consectetur adipiscing elit.</div>
+    <div class="second">Sed id dolor sit amet est euismod vulputate.</div>
+    <div class="third">Donec finibus tincidunt pharetra. </div>
+    <div class="fourth">Vestibulum hendrerit quis eros non vulputate.</div>
+    <a href="">버튼</a>
+    <a href="" class="btn-small">회원가입</a>
+</body>
+</html>

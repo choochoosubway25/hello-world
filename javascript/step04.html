@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //5. 자료형
+        /*
+            자료형의 종류 : 원시형, 참조형
+            1) 원시형의 종류 
+            number type / string type / boolean type /
+            undefined type / null type
+            2) 참조형의 종류
+            object type / array type(object) / function type
+        */
+       
+        //1 number type
+        let num1 = 10;
+        let num2 = 20.1;
+
+        console.log(typeof num1);
+        console.log(typeof num2);
+
+        // number type인 경우는 산술연산(+,-,*,/,%) 가능
+
+        let num3 = 30;
+        let result1 = num1 + num3;
+        console.log(result1);
+
+        let result2 = num1 - num2;
+        console.log(result2);
+
+        let result3 = num1 * num2;
+        console.log(result3);
+
+        let result4 = num1 / num2;
+        console.log(result4);
+
+        let result5 = num3 % num1;
+        console.log(result5);
+
+        let num4 = 012; //8진수
+        console.log(num4);
+
+        
+        // 2 string type
+        let myName = '김두한';
+        let yourName = "시라소니";
+        let hisName = `장택상` // ES6에서 추가된 템플릿 문자열
+        console.log(typeof myName);
+        console.log(typeof yourName);
+        console.log(typeof hisName);
+
+        // 3 boolean type
+        let isRun = true;
+        let isGreater = 10 > 5;
+        console.log(typeof isRun);
+        console.log(typeof isGreater);
+
+        // 4 undefined type
+        let a; // 변수 선언만 하고 초기 값 할당 X 인 경우 뜸
+        let b = undefined;
+        let c = a+1; // undefined 에 연산을 하게 될 경우 NaN이 뜨게 됨.
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(c); //NaN
+
+        // 5 null type -> object (존재는 하나 거의 쓰지 않음)
+        let d = null;
+        console.log(typeof d);
+        let e = d+1;
+        console.log(e); // 1
+
+        // 6 array type
+        const names = ['신익희','조병옥','김두한'] 
+        //array 는 const로 선언하는 것이 권장사항
+        console.log(typeof names); // object
+
+        // 7 object type
+        const obj = {num : 1, name : '장택상', id : 'kukjeong'};
+        // {key : value , key : value} 의 형태로 작성해야 함.
+        console.log(typeof obj) // object
+
+        // 8 function typt
+        function sum(){
+            alert('sum 함수입니다.');
+        }
+        sum();
+        console.log(typeof sum) // function
+
+        /*
+        원시형 자료형과 참조형 자료형의 차이 : 
+        원시형 자료형은 변수 하나에 값이 하나만 저장이 됨
+        참조형 자료형은 변수 하나에 값이 여러개 저장이 됨
+        */
+
+
+    </script>    
+    <title>Data type</title>
+</head>
+<body>
+    
+</body>
+</html>

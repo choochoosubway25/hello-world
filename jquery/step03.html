@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        jQuery(function(){
+            //jQuery('li').eq(0).addClass('s');
+            //jQuery('li').first().addClass('s');
+            //jQuery('li').last().addClass('s');
+            //jQuery('li').not(':even').addClass('s');
+            //jQuery('li').not(':eq(1)').addClass('s');
+            /* jQuery('li').each(function(index,value){
+                console.log(index, jQuery(value).text());
+                // .text 와 .html 의 차이 : html -> 안의 요소까지, text -> 안의 text만.
+                jQuery(value).text('li'+index); // .text() : 텍스트 내용 가져오기, 
+                                                //.text(바꿀내용) : 텍스트 내용 바꾸기  
+            }); */
+            /* 
+                호기심 : .each(function)(index){
+                    console.log(index, jQuery(this).text());
+                    $(this).text('li'+index);
+                    // jQuery(this) : jQuery 에서 선택자로 선택한 요소
+                }
+            */
+
+            //jQuery('#root').children().addClass('s');
+            // 사실 아래 코드와 같은 기능이다.
+            // jQuery('root > div').addClass('s');
+            
+            //closest() : 현재 요소를 포함해서 가장 가까운 부모 요소를 찾는다.
+            jQuery('li').closest('div').addClass('s');
+
+            // jQuery 는 버전업이 빨리 되고 jQuery 의 documentation이 아주 될 되어있으므로
+            // 책을 사기보다는(어차피 지난 버전이라 의미없는 경우가 많다.) 인터넷에서 문서를 찾아보자.
+            // 프로젝트 만들 거리 한번 생각해보기...
+            // 앞으로도 까먹지 않게 10분 정도만 계속 복습을 해보자. 
+        });
+    </script>
+    <style type="text/css">
+                
+                #panel div, #panel ul, #panel li , #header{
+                        border : 2px solid rgb(48, 31, 31);
+                        margin : 10px;
+                        padding : 10px;
+                }
+                #message { 
+                width:98%;
+                  height:auto;
+                  font-size:20px;
+                
+                padding: 14px 10px; 
+                border: 1px solid #999; 
+                
+                }
+
+
+                #panel ul{
+                        list-style : none;
+                }
+                
+                #panel .s{
+                        border : 2px solid red;
+                        background-color : yellow;
+                }
+                .remov{
+                        border : 2px solid black;
+                        background-color : white;
+                }
+        </style>
+    <title>jquery selector</title>
+</head>
+<body>
+    
+        <div id="panel">
+                <div id="root">
+                        div id="root""
+                        <div id="first">
+                                div id="first"
+                        </div>
+                        <div>
+                                div
+                                <ul>
+                                        ul
+                                        <li>li</li>
+                                        <li>li</li>
+                                        <li>li</li>
+                                        <li>li</li>
+                                        <li>li</li>
+                                        <li>li</li>
+                                </ul>
+                                <div class="third">div class="third"</div>
+                        </div>
+                        <div>div</div>
+                        
+                </div>
+        </div>
+        
+</body>
+</html>

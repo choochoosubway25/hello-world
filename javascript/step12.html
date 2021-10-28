@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /*
+            DOM(Document Object Model) :  웹 페이지에 대한 프로그래밍 인터페이스
+            기본적으로 여러프로그램들이 페이지의 콘텐츠 및 구조, 그리고 스타일을
+            읽고 조작할 수 있는 API 제공
+            DOM은 원본 HTML 요소들의 구조화된 표현
+            DOM은 원본 HTML 문서의 객체 기반 표현 방식이며 DOM의 개체구조는
+            노드트리로 표현
+        */
+       /* const h1 = document.createElement("h1");
+       const textNode = document.createTextNode("안녕하세요.");
+       h1.appendChild(textNode);
+       document.body.append(h1);  */// 오류가 남. 
+       //오류가 나는 이유는 위에서부터 컴파일 하는 html특성상, body
+       //객체가 생성되지 않았기 때문이다.
+
+       /*
+           문서객체를 가지고 오는 함수.
+           1)(document.)getElementById(id): 태그의 id 속성이 함수의
+           id 와 일치하는 문서 객체를 가져옴
+       */
+
+    </script>
+    <title>DOM(Document Object Model)</title>
+</head>
+<body>
+    <h1 class="test">안녕하세요.</h1>
+</body>
+<script>
+   /* const h1 = document.createElement("h1");
+   const textNode = document.createTextNode("안녕하세요.");
+   h1.appendChild(textNode);
+   document.body.append(h1) */
+   //document.body.innerHTML = '<h1>안녕하세요</h1>';
+   //const h1 = document.getElementById("test");
+   const h1 = document.querySelector(".test"); 
+   // 적당히 css할 때 선택자 지정하는 것 처럼 지정해주면 된다.
+   h1.style.backgroundColor = "yellow";
+   h1.style.color = "red";
+   h1.innerHTML = 'Hello'; // 이렇게 하면 조작이 된다.
+
+   //h1.remove(); // 문서객체 삭제할 때 (사실 잘 안씀.)
+</script>
+</html>

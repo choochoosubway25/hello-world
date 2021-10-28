@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="save.html" method="get">
+        <div>
+            <!--
+            name 값은 중복이 되어도 되지만, id 값은 form 내부에서 유일한
+            게 좋다. 중복이 될 경우, 자바스크립트 작업 과정에서 오류가 
+            발생할 가능성이 높다.
+            -->
+            <label for="id">아이디</label>
+                <!--
+                    placeholder 어트리뷰트의 역할 : input 영역에 
+                    어떤 값을 어떻게 입력해야 하는지 유저에게 알려준다. 
+                    이 때 input 영역에 무언가를 입력하면
+                    placeholder 어트리뷰트에 입력한 값은 사라지게 된다.
+                -->
+            <input type="text" name="id" id="id"
+                placeholder="아이디를 입력하세요">
+        </div>
+
+        <div>
+            <!--
+                type 어트리뷰트를 number 로 하게 되면 숫자만 입력이 된다.
+                모바일로 실행할 경우, 모바일 자판 역시 숫자로만 구성된
+                자판이 뜨게된다.
+            -->
+            <label for="age">나이</label>
+            <input type="number" name="age" id="age">
+        </div>
+
+        <div>
+            <!--
+                fieldset 역할 : 관련된 입력 양식들을 그룹화 할 때 사용.
+                사실 fieldset은 블록요소이므로 div를 빼도 된다. 
+                그러나 fieldset이 단독으로 쓰이는게 아니라면
+                다른 항목에서 div가 사용되었을 것이고, 따라서 div를 써주는게
+                코드의 통일성을 줘서 유지보수가 쉬워진다.
+            -->
+            <fieldset>
+                <!--
+                    legend의 역할 : fieldset 에서의 제목을 다는 역할을 한다.
+                -->
+                <legend>성별을 선택하세요</legend>
+                <!--
+                    radio 버튼을 만들때, input의 radio의 name이 다를경우,
+                    중복선택이 가능해진다. 
+                    반대로 name이 서로 같은 것들 끼리는 중복선택이 허용되지
+                    않는다. 이를 이용하면 radio input들을 그룹으로 묶을 수 있다.
+                    (보통은 그려려고 radio type을 쓰는거고)
+                    그리고 radio 버튼에 기본 설정을 하고 싶으면
+                    radio input 태그 끝에 checked 어트리뷰트를 입력하면 된다.
+                    한편, radio type의 경우 기본적으로 버튼을 선택했는지 
+                    (즉 버튼을 눌러서 값이 켜졌는지만 따진다.) 여부를 값으로
+                    보낸다. 그런데 우리가 보통 radio type을 쓰는 이유는 
+                    다시선다 형태의 질문을 통해 어떤 항복에특정값을 보내려는 경우가 많다.
+                    따라서 radio type인 경우에는 value 어트리뷰트를 따로
+                    지정하여 radio 버튼이 켜졌을 경우 어떤 값을 보낼지를 
+                    설정해 줘야 한다.
+                -->
+                <input type="radio" name="gender" id="male" value="남자">
+                <label for="male">남성</label>
+                <input type="radio" name="gender" id="female" value="여자" 
+                checked>
+                <label for="female">여성</label>
+            </fieldset>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>취미를 선택하세요</legend>
+                <input type="checkbox" name="hobby"
+                    id="baseball" value="야구">
+                <label for="baseball">야구</label>
+
+                <input type="checkbox" name="hobby" 
+                    id="golf" value="골프" checked>
+                <label for="golf">골프</label>
+
+                <input type="checkbox" name="hobby" 
+                    id="reading" value="독서">
+                <label for="reading">독서</label>
+            </fieldset>
+        </div>
+
+        <div>
+            <!--
+                select의 역할: 한개 또는 여러개의 리스트에서 여러개의 아이템을 사용하는데 사용
+                ex) 맛 선택 1 , 맛 선택 2, 등등....
+                select 에서 값을 보낼때, 겉에 보여지는 값이 아니라
+                뭔가 암호화된 값등을 보내고 싶다면, option 태그의
+                value 어트리뷰트를 이용하면 값을 따로 지정해 줄 수 있다.
+            -->
+            <label for="job">직업</label>
+            <select name="job" id="job">
+                <option value="">직업을 선택하세요</option>
+                <option>선생님</option>
+                <option>개발자</option>
+                <option>분석가</option>
+                <option>기타</option>
+            </select>
+        </div>
+
+        <div>
+            <!--
+                input의 email type의 의미 : pc의 경우 의미가 없다.
+                그러나 모바일인 경우에, text type과 email type 에서
+                자판의 대응의 형태가 달라진다.
+                text : 일반 자판, email : @ 등의 email 입력이 쉬워지도록
+                변경된 자판.
+            -->
+            <label for="email">이메일</label>
+            <input type="email" name="email" id="email">
+        </div>
+
+        <div>
+            <label for="phone">핸드폰</label>
+            <input type="tel" name="phone" id="phone">
+        </div>
+        <div>
+            <label for="photo">사진</label>
+            <input type="file" name="photo" id="photo">
+        </div>
+
+        <div>
+            <label for="comment">가입인사</label>
+            <textarea name="comment" id="comment" 
+                cols="100" rows="10"></textarea>
+        </div>
+        <div>
+            <!--
+                submit 의 역할 : submit은 form에 입력한 데이터를 form의 
+                action 어트리뷰트에 정보를 보내는 역할을 한다.
+            -->
+            <button type="submit"> 회원가입 </button>
+            <button type="reset">취소</button>
+        </div>
+    </form>
+</body>
+</html>

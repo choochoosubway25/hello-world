@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            /* div 요소에 배경을 부여한다. */
+            width : 100px;
+            height: 100px;
+            background-color: burlywood;
+        }
+        .box1 {
+            /* border의 굵기, 선 스타일, 색깔을 지정해 줄 수 있다. */
+            border-width: 10px;
+            border-style: solid;
+            border-color: brown;
+        }
+        .box2 {
+            /* 위 설정은 아래와 같이 한 줄로 정리 할 수 있다. */
+            border :  10px dotted brown
+        }
+        .box3 {
+            /* 
+            border도 상하좌우 각각의 스타일을 설정하는 것이 가능하다.
+            다만 그럴 일이 거의 없을 뿐.
+            */
+            border-top-width: 2px;
+            border-top-style: solid;
+            border-top-color: blue;
+
+            border-right-width: 2px;
+            border-right-style: dotted;
+            border-right-color: black;
+
+            border-bottom-width: 2px;
+            border-bottom-style: dashed;
+            border-bottom-color: red;
+
+            border-left-width: 5px;
+            border-left-style: double;
+            border-left-color: green;
+        }
+
+        .box4 {
+            /* 상하좌우에 속성을 부여 할 때, 이렇게 코딩하는게 가장 좋다.*/
+            border-width: 10px 10px;
+            border-style: solid dotted;
+            border-color: blue green;
+        }
+        /* .newText {
+            border: none;
+            border-bottom-width: 1px;
+            border-bottom-style: dashed;
+            border-bottom-color: black;
+        } */
+        .newText {
+            border: none;
+            border-bottom: 1px solid gray;
+            width: 500px;
+            height: 30px;
+            font-size: 20px;
+        }
+        .newText:focus{
+            outline: none;
+            background-color: #b9b9b9;
+        }
+    </style>
+    <title>Border</title>
+</head>
+<body>
+    <div class="box1">div1</div>
+    <div class="box2">div2</div>
+    <div class="box3">div3</div>
+    <div class="box4">div4</div>
+    <div class="box5">div5</div>
+
+    <input type="text" class="newText">
+</body>
+</html>

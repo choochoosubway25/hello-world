@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid bisque;
+        }
+        .box:hover{
+            /*
+             : 는 pseudo class 역할을 한다. hover 커버가 되었을때만 
+             적용하는 사항이다.
+             pesudo class 는 조건부의 역할을 하는 경우가 많다.
+            */
+            background-color: pink;
+        }
+        input:focus{
+            /* 입력창이 주목을 받았을 경우 -> :focus */
+            background-color: yellow;
+            /* 
+            클릭 할 때 생기는 선 -> outline 
+            outline, border 를 같이 없애면 입력할 때 선이 안보여 깔끔할수도?
+            */
+            outline: none;
+            border : none;
+        }
+        button:active {
+            background-color: red;
+        }
+        /* 하이퍼링크의 밑줄을 제거하기*/
+        a { 
+            text-decoration: none; /* 밑줄 제거하기*/;
+        }
+        a:hover { /* 마우스를 올렸을 때 발생하는 pseudo class */
+            text-decoration: underline;
+            color: dodgerblue;
+        }
+        a:link { /* 한번도 방문하지 않았을 때 발생하는 pseudo class */
+            color: black;
+            font-weight : bold; /* 글씨를 굵게 하는 것 */
+        }
+        a:visited{ /* 한 번이라도 방문했을 때 발생하는 pseudo class */
+            color: red;
+            font-weight: normal;
+        }
+        .first::first-letter{
+            font-weight: bold;
+            color: red;
+        }
+        .second::before {
+            content: "'";
+            color: red;
+        }
+        .second::after{
+            content: "'";
+            color: red;
+        }
+        .third::first-line {
+            background-color: yellowgreen;
+        }
+    </style>
+    <title>가상 클래스와 가상 요소</title>
+</head>
+<body>
+    <div class="box">box</div>
+    <input type="text">
+    <button>버튼</button>
+    <a href="https://daum.net">다음</a>
+    <p class="first">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p class="second">Sed id dolor sit amet est euismod vulputate.</p>
+    <p class="third">Donec finibus tincidunt pharetra.<br> Vestibulum hendrerit quis eros non vulputate.</p>
+</body>
+</html>

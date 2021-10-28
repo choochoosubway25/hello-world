@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSS 파일과 style 태그 내부에서의 주석은 */
+        /*  (주석내용)   */
+        /* 의 형태로 작성하며, 여러줄 주석을 지원한다. */ 
+        /* element selector */
+        div, p { /* , 를 이용하면 여러가지 요소들에 선택자를 적용할 수 있다.*/
+            /*
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+            아래 코드는 위 코드와 동일한 기능을 한다.
+            */
+            border : 1px solid black
+        }
+        /* class selector */
+        .bg-yellow {
+            /* 
+            클래스의 이름은 중복해서 써도 된다. 이럴경우 여러 요소를 
+            하나의 클래스로 묶게 된다.
+            */
+            background-color: yellow;
+        }
+        /* id selector */
+        #myDiv {
+            /*
+            어떤 id에 대응되는 요소는 오직 하나여야 한다. (중복선언 불가)
+            사실 중복선언이 되어도 굴러가나 웹표준 문법에 위반되므로 조심해야
+            한다.
+            */
+            color: red;
+        }
+    </style>
+    <title>CSS Selector</title>
+</head>
+<body>
+    <div>div1</div>
+    <div class="bg-yellow">div2</div>
+    <div class="bg-yellow">div3</div>
+    <div class="bg-yellow">div4</div>
+    <p class="bg-yellow">p1</p>
+    <div id="myDiv">div5</div>
+</body>
+</html>

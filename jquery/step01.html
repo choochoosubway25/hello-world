@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+
+        $(function(){
+            $('.welcome')
+            .html('welcome jquery')
+            .css('background-color','yellow');
+        }); //window.onload
+        $(document).ready(function(){
+
+        }); // window.onload
+
+        /* window.onload = function(){
+            $('.welcome')
+            .html('welcome jquery')
+            .css('background-color','yellow');
+    
+            const divObjs = document.getElementsByClassName("welcome");
+            console.log(divObjs);
+            // const divObjs = document.querySelectorAll(".welcome")
+
+            for(const divObj of divObjs){
+                divObj.innerHTML = 'welcome jquery';
+                divObj.style.backgroundColor = 'yellow';
+            }
+        } */
+        
+        /*
+            선택자 종류 : CSS 와 비슷함
+            li:nth-child(2) -> li 요소중 2번째의 자식만 선택
+            
+        */
+    </script>
+    <title>jquery hello world!</title>
+</head>
+<body>
+    <div class="welcome"></div>
+    <div class="welcome"></div>
+</body>
+
+</html>

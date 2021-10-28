@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // 배열은 reference type
+        /*
+        배열은 생성(선언), 할당, 출력
+        */
+
+        // 1. 배열 생성과 할당
+        const nums1 = [10,20,30,40];
+        const nums2 = new Array(10,20,30,40); 
+        const nums3 = Array(10,20,30,40);
+
+        const names= ['시라소니', '무옥이', '쌍칼'];
+        const randoms = ['아무개', 10, false];
+
+        console.log(nums1[0]); //10
+        console.log(nums2[1]); //20
+        console.log(names[2]);
+        console.log(randoms[1]) // 10
+
+
+        //배열의 크기
+        console.log(nums1.length);
+        console.log(names.length);
+        console.log(randoms.length);
+
+        //배열 출력 -> for
+        for(let i = 0; i<nums1.length;i++){
+            console.log(nums1[i]);
+        }
+        //배열 수정
+        nums1[0] = 100;
+        nums1[1] = 200;
+        nums1[2] = 300;
+        nums1[3] = 400;
+        nums1[4] = 500;
+        //push() -> 인덱스를 모르는 상황에서 맨 마지막 위치 뒤에 
+        //값을 넣을 때 사용
+        nums1.push(600);
+
+        // 1. 배열 출력
+        for(let i = 0; i<nums1.length;i++){
+            console.log(nums1[i]);
+        }
+
+        console.log('--------- for in ----------')
+        //2. 배열 출력 - for in  -> es6 에서 추가, 인덱스를 추출
+        for(let index in nums1){
+            console.log(nums1[index]);
+        }
+
+        console.log('--------- for of ----------')
+        //3. 배열 출력 - for of  -> es6 에서 추가, 인덱스 순으로 값을 추출
+        for(let value of nums1){
+            console.log(value)
+        }
+
+        console.log('--------- forEach ----------')
+        //4. 배열 출력 - forEach   -> es5에서 추가
+        nums1.forEach(function(value, index){
+            console.log(value+","+index);
+        });
+
+
+
+        //배열의 구성요소를 문자열로 바꾸는 방법
+        //join('') -> 배열의 구분문자열을 '' 으로 대체해서
+        // 문자열로 반환
+
+        console.log(nums1);
+        let str = nums1.join(',');
+        console.log(str);
+
+        /*
+            로또복권
+            1. 1-45까지의 임의 숫자 6개를 출력
+            2. Math.random() -> 0 이상 1미만의 부동소수점 반환
+            3. Math.random() * 45 -> 0 ~ 44.9999999
+            4. Math.floor() : Math.floor(44.6789) -> 44
+            5. Math.floor(Math.random() * 45) + 1 -> 45
+        */
+        const lottos = [];
+        const lotto_length = 6;
+        while(true){
+            if(lottos.length == 6) break;
+            let number = Math.floor(Math.random() * 45) + 1;
+            //lottos 배열에 있는 값과 number 비교해서
+            //동일한 값이 있으면 새로 number 값을 구하고
+            //동일하지 않으면 배열에 number 값을 넣어준다.
+            lottos.push(number);
+        }
+
+
+
+
+        // 로또 복권 해답?
+        // const lottos = [];
+        const setting_length = 6;
+        while(true){
+            let non_exist_num = true // 중복 숫자가 안 나왔는지 여부 설정
+            if(lottos.length == setting_length) break;
+            let number = Math.floor(Math.random() * 45) + 1;
+            for(let i = 0; i<lottos.length;i++){
+                // 중복 숫자가 나왔으면 중복 체크 변수 false
+                if(number == lottos[i]) non_exist_num = false
+            }
+            // 중복 숫자가 안 나왔을 경우에만 push 이용해 숫자 추가.
+            if(non_exist_num){
+                lottos.push(number);
+            }
+        }
+        
+        console.log(lottos.join(','));
+
+
+
+    </script>
+    <title>Arrays</title>
+</head>
+<body>
+    
+</body>
+</html>

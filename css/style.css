@@ -1,0 +1,5 @@
+@charset "utf-8";
+/* CSS 파일은 내부 <style> 태그 안의 내용을 채워놓는 것이 발전한 것이다.*/
+p {
+    background-color: yellow; 
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 
+        float는 블록요소를 인라인요소처럼 쓸 수 있도록 설정하는 옵션
+        다만, 설정은 여전히 블록으로 되어있다. 
+        즉 float != 블록요소의 인라인 설정
+        float를 쓰는 이유: 블록요소를 굳이 인라인요소로 설정하기
+        싫어함. 
+        float를 쓰고 난 뒤 적용범위를 끝내려 할 경우,
+        clear:both 를 이용해 새 줄로 바꾸고 float 적용을 끊어낸다.
+        */
+        .container {
+            width: 760px;
+            margin : 0 auto;
+        }
+        nav ul {
+            list-style-type: none;
+            /* 리스트 옆에 붙는 점(·)을 없애버림. */
+            padding : 0;
+        }
+        nav li {
+            float: left;
+        }
+        .clear {
+            clear : both;
+        }
+        nav {
+            background-color: black;
+            overflow: auto;
+            /* float 을 하게되면 float와 연관된 부모 요소가 이를 감싸지 못함
+            따라서 우리는 overflow:auto를 통해 해소해야함.*/
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding : 10px 20px;
+            display: block;
+        }
+        nav a:hover {
+            color: gray;
+        }
+    </style>
+    <title>Float menu</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Cafe</a></li>
+                <li><a href="">Contacts</a></li>
+                <li><a href="">Join</a></li>
+        </nav>
+        <p class="clear">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id dolor sit amet est euismod vulputate. Donec finibus tincidunt pharetra. Vestibulum hendrerit quis eros non vulputate. Vestibulum lacus lacus, euismod nec enim in, pretium tincidunt arcu. Sed risus justo, lobortis a lorem vitae, pellentesque faucibus ipsum. Maecenas pellentesque vestibulum nibh, vel sodales eros venenatis a. Nunc iaculis fermentum nisi et consequat.</p>
+    </div>
+</body>
+</html>

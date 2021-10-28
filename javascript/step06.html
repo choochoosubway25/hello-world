@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //camel case로 변수를 설정한다. -> 가운데가 대문자
+        let myName = "시라소니";
+        let yourName = "손정의";
+        /*
+            + -> 연결 연산자
+            string + number -> string
+            number + string -> string
+            string + string -> string
+        */
+        let msg = myName + yourName;
+        console.log(msg);
+        
+        // 연결연산자를 활용하면 이렇게도 할 수 있다. 
+        let station = "을지로입구역";
+        let ourMsg1 = "이번 정차역은 " + station + " 입니다. "
+        console.log(ourMsg1);
+
+        //es6 추가된 템플릿 문자열
+        // ``의 경우 템플릿 문자열이 가능하다.
+        // 템플릿 문자열은 ${}을 이용해 string 안에서 변수 처리가 가능하다.
+        let ourMsg2 = `이번 정차역은 ${station} 입니다.`;
+        console.log(ourMsg2);
+
+        // == => 값만 비교, === => 값과 자료형까지 모두 비교
+        // 자바스크립트는 변수에 대해 자료형이 고정되있지 않다.
+        // 즉, 새로운 값을 대입할 경우, 자료형이 달라질 수 있다.
+        let a = 10;
+        let b = "10";
+        console.log(a == b); //값만 비교 -> 보통은 여기만 자주 씀.
+        console.log(a === b); // 값과 자료형 비교 -> 세밀하게 비교 가능
+
+    </script> 
+    <title>string</title>
+</head>
+<body>
+    
+</body>
+</html>
