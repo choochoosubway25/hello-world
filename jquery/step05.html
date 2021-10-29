@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        jQuery(function(){
+            //jQuery("#sendBtn").click(function(){}); // 이벤트 하나를 콕 집은 만큼, 이벤트는 하나만 등록이 된다.
+            // jQuery('#sendBtn').bind('click',function(){}); // 이 코드는 여러 이벤트를 등록을 할 수 있다.
+            // jQuery('#sendBtn').on('click',function(){});  // 위 bind 코드와 동일한 코드
+            // 사실 위나 아래나 일반인들에게는 별반 차이가 없지만, 시각장애인에게는 전혀 다르다.
+            // 시각장애인은 웹을 다룰때 탭을 이용해 접근하므로, 탭을 이용한 이벤트도 같이 달아줘야 웹 접근성에 도움이 된다.
+            let count = 0;
+            jQuery('#sendBtn').bind('click',function(){
+                count++;
+                jQuery('#cartCount').text(count);
+            });
+        });
+    </script>
+    <style>
+        h1 span {
+            display: inline-block;
+            font-size: 20px;
+            background-color: salmon;
+            width: 26px;
+            color: seashell;
+            text-align: center;
+            border-radius: 30px;
+        }
+    </style>
+
+    <title>jquery event</title>
+</head>
+<body>
+    <h1>장바구니<span id="cartCount">0</span></h1>
+    <button id = "sendBtn">장바구니</button>
+</body>
+</html>

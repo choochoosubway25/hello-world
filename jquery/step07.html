@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            width : 300px;
+            height : 300px;
+            background-color: burlywood;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        jQuery(function(){
+            jQuery('#btn2').hide()
+
+            jQuery('#btn1').bind('click',function(){
+                //jQuery('#target').fadeOut();
+                //jQuery('#target').hide();
+                jQuery('#target').slideUp(2000,function(){
+                    jQuery('#btn1').hide();
+                    jQuery('#btn2').show();
+                });
+                    
+            });
+            jQuery('#btn2').bind('click',function(){
+                //jQuery('#target').fadeIn();
+                //jQuery('#target').show();
+                jQuery('#target').slideDown(2000,function(){
+                    jQuery('#btn1').show();
+                    jQuery('#btn2').hide();
+                });
+                    
+            });
+        });
+    </script>
+    <title>jQuery effect</title>
+</head>
+<body>
+    <input type="button" id="btn1" value="효과1">
+    <input type="button" id="btn2" value="효과2">
+    <div id="target"></div>
+</body>
+</html>

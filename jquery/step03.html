@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
+            /*
+                DOM traversing : DOM 탐색
+            */
         jQuery(function(){
-            //jQuery('li').eq(0).addClass('s');
-            //jQuery('li').first().addClass('s');
-            //jQuery('li').last().addClass('s');
-            //jQuery('li').not(':even').addClass('s');
-            //jQuery('li').not(':eq(1)').addClass('s');
+            //jQuery('li').eq(0).addClass('s');   // 연달아 있는
+            //jQuery('li').first().addClass('s');   // 첫번째 요소
+            //jQuery('li').last().addClass('s');   // 마지막 요소
+            //jQuery('li').not(':even').addClass('s'); // .not('설정') : 설정에 해당되지 않는 것들만
+            //jQuery('li').not(':eq(1)').addClass('s'); 
             /* jQuery('li').each(function(index,value){
                 console.log(index, jQuery(value).text());
                 // .text 와 .html 의 차이 : html -> 안의 요소까지, text -> 안의 text만.
@@ -26,14 +29,26 @@
                 }
             */
 
-            //jQuery('#root').children().addClass('s');
+            //jQuery('#root').children().addClass('s'); // 자식 노드 요소 찾기
             // 사실 아래 코드와 같은 기능이다.
             // jQuery('root > div').addClass('s');
             
             //closest() : 현재 요소를 포함해서 가장 가까운 부모 요소를 찾는다.
-            jQuery('li').closest('div').addClass('s');
+            //jQuery('li').closest('div').addClass('s');
 
-            // jQuery 는 버전업이 빨리 되고 jQuery 의 documentation이 아주 될 되어있으므로
+            //jQuery('#root').find('li').addClass('s'); // 지정된 요소 속 지정된 요소를 찾는 함수.
+            //jQuery('#root').find('li').first().nextAll().addClass('s'); 
+            // .next() : 지정된 요소보다 하나 작은 인덱스, .nextAll() : 지정된 요소보다 작은 인덱스 찾는 함수
+            //jQuery('li').eq(2).prev().addClass('s');  //지정된 요소보다 하나 작은 인덱스 갖는 형제 찾기
+            //jQuery('li').eq(2).prevAll().addClass('s'); // 지정된 요소보다 작은 인덱스 갖는 형제 찾기 
+
+            //jQuery('li').parent().addClass('s'); // .parent() : 어떤 요소의 부모요소 찾기
+            //jQuery('li').parents().addClass('s'); // .parents() : 어떤 요소의 부모, 조부모들을 다 찾기
+            //jQuery('li').eq(3).siblings().addClass('s');  // .siblings() : 어떤 요소의 형제 요소들을 다 찾기
+            // CSS 와 jQuery 의 형제 개념 차이 : CSS -> 자기 밑에 있는 같은 레벨 요소만 형제
+            //                                  jQuery -> 자기와 같은 레벨의 요소들이 형제 
+
+            // jQuery 는 버전업이 빨리 되고 jQuery 의 documentation이 아주 잘 되어있으므로
             // 책을 사기보다는(어차피 지난 버전이라 의미없는 경우가 많다.) 인터넷에서 문서를 찾아보자.
             // 프로젝트 만들 거리 한번 생각해보기...
             // 앞으로도 까먹지 않게 10분 정도만 계속 복습을 해보자. 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        /*
+            jQuery는 하나의 선택자를 잡으면 연속적으로 속성을 줄 수 있다. 이를 chain이라고 한다.
+            (반면에 Javascript는 그게 안된다)
+
+            ex)
+            const aObj = document.getElementBy("tutorial");
+            aObj.setAttribute('href','http://jquery.org');
+            aObj.setAttribute('target','_blank');
+            aObj.style.backgroundColor = 'red';
+
+            ->
+
+            $('#tutorial')
+            .attr('hrer','https://jquery.org');
+            .attr('target','_blank');
+
+            -> 연속적으로 함수들을 연결하는 형태로 쓸 수 있음.
+
+            한편으로 DOM의 경우 새로운 요소를 추가/삭제, 복사, 속성변경 등을 실시 할 수 있음
+             -> DOM manipulation (DOM 조작)
+
+
+            ex)
+
+            <li>
+                <h2>
+                <button>
+
+            .append() -> 
+            <li>
+                <h2>
+                <button>
+                <p>
+            .prepend()
+            <li>
+                <p>
+                <h2>
+                <button>
+            .before()
+            <p>
+            <li>
+                <h2>
+                <button>
+            .after()
+            <li>
+                <h2>
+                <button>
+            <p> 
+        */
+
+        jQuery(function(){
+            // 요소 추가 삭제 밎 변경, 삽입
+            // jQuery('div').append('<h1>hello</h1>'); div 의 마지막 자식 자리에 붙음
+            // jQuery('<h1>hello</h1>').appendTo('div');  // 위 코드와 이 코드는 기능이 같음(동치)
+            
+            // jQuery('div').prepend('<h1>김도에게 천원줘야지</h1>'); // div의 첫번째 자식 자리에 붙음
+            // jQuery('<h1>김도에게 천원줘야지</h1>').prependTo('div');  // 위 코드와 아래코드는 동치
+
+            //jQuery('div').before('<h1>아이고난!</h1>'); // div의 앞 형제 자리에 붙음
+            //jQuery('div').after('<h1>구렁성 구렁성</h1>') // div의 뒷 형제 자리에 붙음
+
+            //jQuery('p').remove();  // 지정 요소(태그)를 지워버림
+            // jQuery('p').detach(); // remove() 와 detach() 는 기능이 동치다.
+            // jQuery('p').empty(); //  태그 내의 내용만 지워버림
+
+            /* let str1 = jQuery('p').text(); 텍스트의 내용만 가져옴
+            alert(str1);
+            let str2 = jQuery('p').html(); 텍스트의 html 코드를 가져옴
+            alert(str2); */
+
+            // jQuery('p').text('<strong>제이쿼리</strong>'); // p 요소의 변경하려는 내용을 텍스트로 인식 후 입력
+            // jQuery('p').html('<strong>제이쿼리</strong>'); // p 요소의 변경하려는 내용에 태그가 있을 경우 태그가 작동 됨.
+
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>
+            <strong>jQuery</strong>
+        </p>
+</body>
+</html>
